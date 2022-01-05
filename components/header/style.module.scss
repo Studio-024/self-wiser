@@ -48,7 +48,7 @@
       
       cursor: pointer;
       
-      &:hover{
+      &:hover {
         color:$color-base;
       }
     }
@@ -63,8 +63,8 @@
     border-radius: .2rem;
     
     font-size: $text-xs;
-
     font-family: 'Noto-sans';
+
     transition: 0.2s;
 
     &:focus-visible {
@@ -72,6 +72,40 @@
     }
     &::placeholder {
       color: $color-base-disable;
+    }
+  }
+}
+@media screen and (max-width: 50rem) {
+    
+  .container {
+    height: 4rem;
+    padding-inline: .25rem;
+    
+    &_logoContainer {
+      min-width: 6rem;
+  
+      font-size: $text-xs;
+    }
+
+    &_nav {
+
+      &_topic {
+        padding-inline: 0.5rem;
+        
+        font-size: $text-xs;
+
+        color: $color-base-disable;
+
+        &:active{
+          background-color: #fff;
+          filter: brightness(0.9);
+
+          transition: .1s;
+        }
+      }
+    }
+    &__search {
+      display: none;
     }
   }
 }
