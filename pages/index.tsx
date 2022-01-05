@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
+import { Post } from './posts'
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <h1>hello, world! ... again</h1>
-    </div>
+    <>
+      <Post/>
+    </>
   )
 }
 
