@@ -1,8 +1,13 @@
 import styles from './style.module.scss'
+import styleUtils from '../../styles/utils.module.scss'
 
-export const Header = () => {
+interface props {
+  fixed?: boolean
+}
+
+export const Header = ({ fixed }: props) => {
   return (
-    <header className={styles.container}>
+    <header className={`${styles.container} ${fixed ? styleUtils.fixed : ''}`}>
       <div className={styles.container_logoContainer}>
         {/* Se for uma imagem e não um SVG, usar a tag <Image> */}
         <img alt='Self Wiser' className={styles.container__logo}></img>
