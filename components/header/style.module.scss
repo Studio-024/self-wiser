@@ -1,0 +1,111 @@
+@import '../../styles/vars.scss';
+@import '../../styles/fonts.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  width: 100%;
+  height: 5rem;
+  padding-inline: 1rem;
+  font-family: 'Noto-sans';
+  box-shadow: $box-shadow-blocks;
+  
+  background-color: #fff;
+  
+  &_logoContainer {
+    text-align: center;
+    min-width: 10rem;
+
+    font-size: $text-base;
+    color: $color-focus-primary;    
+  }
+
+  &_nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+    margin-inline: 2rem;
+    
+    &_topic {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+      width: 100%;
+      height: 100%;
+      padding-inline: 1rem;
+
+      font-size: $text-base;
+
+      color: $color-base-disable;
+
+      transition: .2s;
+      
+      cursor: pointer;
+      
+      &:hover {
+        color:$color-base;
+      }
+    }
+  }
+  &__search {
+    width: 14rem;
+    min-width: 10rem;
+    height: 2rem;
+    padding-inline: .5rem;
+
+    border: $border-base $color-base-disable;
+    border-radius: .2rem;
+    
+    font-size: $text-xs;
+    font-family: 'Noto-sans';
+
+    transition: 0.2s;
+
+    &:focus-visible {
+      border: $border-base $color-base;
+    }
+    &::placeholder {
+      color: $color-base-disable;
+    }
+  }
+}
+@media screen and (max-width: 50rem) {
+    
+  .container {
+    height: 4rem;
+    padding-inline: .25rem;
+    
+    &_logoContainer {
+      min-width: 6rem;
+  
+      font-size: $text-xs;
+    }
+
+    &_nav {
+
+      &_topic {
+        padding-inline: 0.5rem;
+        
+        font-size: $text-xs;
+
+        color: $color-base-disable;
+
+        &:active{
+          background-color: #fff;
+          filter: brightness(0.9);
+
+          transition: .1s;
+        }
+      }
+    }
+    &__search {
+      display: none;
+    }
+  }
+}
