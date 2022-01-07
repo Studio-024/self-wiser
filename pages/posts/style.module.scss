@@ -1,0 +1,67 @@
+@import '../../styles/vars.scss';
+@import '../../styles/fonts.scss';
+
+.container {
+  display: grid;
+  grid-template-areas: 
+    'header'
+    'main';
+
+  width: 100%;
+  height: 100%;
+
+  &_header {
+    grid-area: header;
+  }
+
+  &_main {
+    grid-area: main;
+    
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    height: 100%;
+    margin-top: 4rem;
+
+    &_article {
+      width: 47rem;
+
+      & > h1 {
+        font-family: 'Nunito Bold';
+        font-size: $text-2xlg;
+      }
+      & > h2 {
+        margin-top: 1rem;
+
+        font-family: 'Nunito Bold';
+        font-size: $text-xlg;
+      }
+      & > h3 {
+        margin-top: 1rem;
+        
+        font-family: 'Nunito semiBold';
+        font-size: $text-lg;
+      }
+      & > p {
+        margin-block: 1rem;
+
+        font-family: 'Roboto';
+        font-size: $text-base;
+        line-height: 2.3rem;
+      }
+
+      &_resume {
+        font-family: 'Roboto Italic' !important;
+        font-size: $text-sm !important;
+        line-height: 1.5rem !important;
+        color: $color-base-comment !important;
+      }
+
+      &_thumb {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
