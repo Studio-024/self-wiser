@@ -9,11 +9,11 @@
 
   width: 100%;
   height: 100%;
-
+  
   &_header {
     grid-area: header;
   }
-
+  
   &_main {
     grid-area: main;
     
@@ -23,32 +23,40 @@
     width: 100%;
     height: 100%;
     margin-top: 4rem;
-
+    
     &_article {
       width: 47rem;
-
-      & > h1 {
+      max-width: 80%;
+      
+      color: $color-base;
+      
+      & h1 {
         font-family: 'Nunito Bold';
         font-size: $text-2xlg;
       }
-      & > h2 {
-        margin-top: 1rem;
+      & h2 {
+				padding-block: .5rem;
 
         font-family: 'Nunito Bold';
         font-size: $text-xlg;
       }
-      & > h3 {
-        margin-top: 1rem;
+      & h3 {
+				padding-block: .5rem;
         
         font-family: 'Nunito semiBold';
         font-size: $text-lg;
       }
-      & > p {
-        margin-block: 1rem;
+      & p {
+        margin-bottom: 1rem;
 
         font-family: 'Roboto';
         font-size: $text-base;
         line-height: 2.3rem;
+      }
+      & b {
+				font-family: "Roboto Medium" !important;
+        font-weight: normal;
+        color: $color-focus-primary-dark !important;
       }
 
       &_resume {
@@ -61,6 +69,81 @@
       &_thumb {
         width: 100%;
         margin-bottom: 1rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 50rem) {
+  .container {
+  
+    &_main {
+      margin-top: 2rem;
+  
+      &_article {
+        width: 32rem;
+  
+        & > h1 {
+          font-size: calc($text-2xlg - .5rem);
+        }
+        & > h2 {
+          font-size: calc($text-xlg - .25rem);
+        }
+        & > h3 {
+          font-size: calc($text-lg - .25rem);
+        }
+        & > p {
+          font-size: calc($text-base - .25rem);
+          line-height: 2rem;
+        }
+  
+        &_resume {
+          font-size: calc($text-sm - .25rem) !important;
+          color: $color-base-comment !important;
+        }
+  
+        &_thumb {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 35rem) {
+  .container {
+    
+    &_main {
+      margin-top: 1rem;
+
+      &_article {
+        max-width: 85%;
+        width: 85%;
+        
+        & > h1 {
+          font-size: $mob-text-4xlg;
+        }
+        & > h2 {
+          font-size: $mob-text-3xlg;
+        }
+        & > h3 {
+          font-size: $mob-text-2xlg;
+        }
+        & > p {
+          margin-block: .5rem;
+          
+          font-size: $mob-text-base;
+          line-height: 1.6rem;
+        }
+        
+        &_resume {
+          font-size: $mob-text-sm !important;
+          line-height: 1.3rem !important;
+        }
+        
+        &_thumb {
+          width: 100%;
+        }
       }
     }
   }

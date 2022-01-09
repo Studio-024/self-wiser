@@ -23,7 +23,7 @@ export const Post = () => {
             <h2>{data.content.paragraph_2.title}</h2>
             {data.content.paragraph_2.text.map((element, i)=>{return (<p key={i}>{element}</p>)})}
             <h3>{data.content.paragraph_2.subtitle.title}</h3>
-            <p>{data.content.paragraph_2.subtitle.text}</p>
+            <p>{data.content.paragraph_2.subtitle.text}<b>it text bolder</b></p>
           </article>
         </main>
       </div>
