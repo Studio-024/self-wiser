@@ -12,12 +12,16 @@
     url('../assets/fonts/Roboto/Roboto-Italic.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Roboto-Medium';
-  src: url('../assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+  font-family: 'Roboto Medium';
+  src: 
+  local('Roboto-Medium'),
+  url('../assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Roboto-Bold';
-  src: url('../assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-family: 'Roboto Bold';
+  src: 
+  local('Roboto-Bold'),
+  url('../assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
 }
 
 // Noto Sans
