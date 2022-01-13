@@ -1,0 +1,60 @@
+@import '../../styles/vars.scss';
+@import '../../styles/fonts.scss';
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	height: 2rem;
+	padding-inline: 1rem;
+	margin-bottom: 1rem;
+	
+	box-shadow: $box-shadow-blocks;
+	box-sizing: border-box;
+	border: 1.5px solid #6C117B;
+	border-radius: 5px;
+
+	font-family: 'Noto-sans';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1rem;
+	text-align: center;
+	color: #6C117B;
+}
+
+
+// @media screen and (max-width: 50rem) {
+    
+//   .container {
+//     height: 4rem;
+//     padding-inline: .25rem;
+    
+//     &_logoContainer {
+//       min-width: 6rem;
+  
+//       font-size: $text-xs;
+//     }
+
+//     &_nav {
+
+//       &_topic {
+//         padding-inline: 0.5rem;
+        
+//         font-size: $text-xs;
+
+//         color: $color-base;
+
+//         &:active{
+//           background-color: #fff;
+//           filter: brightness(0.9);
+
+//           transition: .1s;
+//         }
+//       }
+//     }
+//     &__search {
+//       display: none;
+//     }
+//   }
+// }
