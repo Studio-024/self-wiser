@@ -8,18 +8,18 @@ interface IProps {
 }
 
 export const Tags = ({ children, className = '', fixed }: IProps) => {
-	const isFixed = fixed ? styleUtils : '';
-	const tags = children.map((data) => {
-		return (
-			<div className={`${styles.container} ${isFixed} ${className}`}>
-				{data}
-			</div>
-		)
-	})
+  const isFixed = fixed ? styleUtils : '';
+  const tags = children.map((data) => {
+    return (
+      <div key={data} className={`${styles.container} ${isFixed} ${className}`}>
+        {data}
+      </div>
+    )
+  })
 
-	return (
-		<div>
-			{tags}
-		</div>
+  return (
+    <div>
+      {tags}
+    </div>
   	)
 }
