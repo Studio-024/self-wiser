@@ -5,16 +5,16 @@ interface data {
   resume: string,
   author: string,
   date: string,
-  Tags: Array<string>,
+  Tags: string[],
   thumbnail: StaticImageData,
   content: {
     paragraph_1: {
       title: string,
-      text: Array<string>,
+      text: string[],
     },
     paragraph_2: {
       title: string,
-      text: Array<string>,
+      text: string[],
       subtitle: {
         title:string,
         text: string
