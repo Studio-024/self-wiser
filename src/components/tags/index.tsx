@@ -2,21 +2,20 @@ import styles from './style.module.scss'
 
 interface IProps {
 	children: string[],
-  	className?: string,
 }
 
-export const Tags = ({ children, className = '' }: IProps) => {
+export const Tags = ({ children }: IProps) => {
   	const tags = children.map((data) => {
     return (
-    	<div key={data} className={`${styles.container_tag} ${className}`}>
-        <a>{data}</a>
-      	</div>
+    	<div key={data} className={`${styles.tag}`}>
+        {data}
+      </div>
     )
   })
 
   return (
-	   	<div className={`${styles.container} ${className}`}>
+    <div className={styles.container}>
       {tags}
-    	</div>
+    </div>
   )
 }
