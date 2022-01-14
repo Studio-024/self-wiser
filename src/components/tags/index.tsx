@@ -7,16 +7,16 @@ interface IProps {
 
 export const Tags = ({ children, className = '' }: IProps) => {
   	const tags = children.map((data) => {
-	return (
+    return (
     	<div key={data} className={`${styles.container_tag} ${className}`}>
-			<a>{data}</a>
+        <a>{data}</a>
       	</div>
     )
-	})
+  })
 
-	return (
+  return (
 	   	<div className={`${styles.container} ${className}`}>
-			{tags}
+      {tags}
     	</div>
-	)
+  )
 }
