@@ -3,6 +3,7 @@ import Image from "next/image"
 import styles from './style.module.scss'
 import { Header } from "../../components/header"
 import { data } from "./models/data"
+import { Article } from "../../components/article"
 
 export const Post = () => {
   return(
@@ -14,17 +15,14 @@ export const Post = () => {
       <div className={styles.container}>
         <Header className={styles.container_header}/>
         <main className={styles.container_main}>
-          <article className={styles.container_main_article}>
-            <h1>{data.title}</h1>
-            <p className={styles.container_main_article_resume} >{data.resume}</p>
-            <div className={styles.container_main_article_thumb} ><Image src={data.thumbnail} alt="test"/></div>
-            <h2>{data.content.paragraph_1.title}</h2>
-            {data.content.paragraph_1.text.map((element, i)=>{return (<p key={i}>{element}</p>)})}
-            <h2>{data.content.paragraph_2.title}</h2>
-            {data.content.paragraph_2.text.map((element, i)=>{return (<p key={i}>{element}</p>)})}
-            <h3>{data.content.paragraph_2.subtitle.title}</h3>
-            <p>{data.content.paragraph_2.subtitle.text}<b>it text bolder</b></p>
-          </article>
+          <section className={styles.container_main_section}>
+            <h1 className={styles.container_main_section_title}>{data.title}</h1>
+            <p className={styles.container_main_section_resume}>{data.resume}</p>
+            <div className={styles.container_main_section_thumb}>
+              <Image src={data.thumbnail} alt="test"/>
+            </div>
+          </section>
+          <Article className={styles.container_main_section} content="<h2>this is a title World</h2> <p> oi <b>mundo</b></p>"/>
         </main>
       </div>
     </>
