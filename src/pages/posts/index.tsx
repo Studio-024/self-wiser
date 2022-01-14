@@ -18,7 +18,7 @@ export const Post = () => {
           <article className={styles.container_main_article}>
             <h1>{data.title}</h1>
             <p className={styles.container_main_article_resume} >{data.resume}</p>
-            <Tags className={styles.container_tags}>{data.Tags}</Tags>
+            <Tags>{data.Tags}</Tags>
             <div className={styles.container_main_article_thumb} ><Image src={data.thumbnail} alt="test"/></div>
             <h2>{data.content.paragraph_1.title}</h2>
             {data.content.paragraph_1.text.map((element, i)=>{return (<p key={i}>{element}</p>)})}
