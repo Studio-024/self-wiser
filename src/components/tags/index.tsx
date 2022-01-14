@@ -1,25 +1,22 @@
 import styles from './style.module.scss'
-import styleUtils from '../../styles/utils.module.scss'
 
 interface IProps {
 	children: string[],
   	className?: string,
-  	fixed?: boolean
 }
 
-export const Tags = ({ children, className = '', fixed }: IProps) => {
-  const isFixed = fixed ? styleUtils : '';
-  const tags = children.map((data) => {
-    return (
-      <div key={data} className={`${styles.container} ${isFixed} ${className}`}>
-        {data}
-      </div>
+export const Tags = ({ children, className = '' }: IProps) => {
+  	const tags = children.map((data) => {
+	return (
+    	<div key={data} className={`${styles.container_tag} ${className}`}>
+			<a>{data}</a>
+      	</div>
     )
-  })
+	})
 
-  return (
-    <div>
-      {tags}
-    </div>
-  	)
+	return (
+	   	<div className={`${styles.container} ${className}`}>
+			{tags}
+    	</div>
+	)
 }

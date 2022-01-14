@@ -2,22 +2,28 @@
 @import '../../styles/fonts.scss';
 
 .container {
-	display: inline-block;
-	justify-content: space-between;
-	
-	width: fit-content;
-	height: 2rem;
-	padding-inline: 1rem;
-	margin-bottom: 1rem;
-	margin-right: 0.8rem;
-	
-	box-shadow: $box-shadow-blocks;
-	box-sizing: border-box;
-	border: 1.5px solid #6C117B;
-	border-radius: 5px;
-
 	font-family: 'Noto-sans';
 	font-weight: 600;
 	font-size: 1rem;
 	color: #6C117B;
+	
+	&_tag {
+		display: inline-block;
+		justify-content: space-between;
+
+		width: fit-content;
+		height: 2rem;
+		padding-inline: 1rem;
+		margin-bottom: 1rem;
+		margin-right: 0.8rem;
+
+		box-shadow: $box-shadow-blocks;
+		box-sizing: border-box;
+		border: 1.5px solid #6C117B;
+		border-radius: 5px;
+
+		:first-child {
+			vertical-align: middle;
+		}
+	}
 }
