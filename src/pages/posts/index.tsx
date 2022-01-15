@@ -3,7 +3,6 @@ import Image from "next/image"
 import styles from './style.module.scss'
 import { Header } from "../../components/header"
 import { data } from "./models/data"
-import { Article } from "../../components/article"
 
 export const Post = () => {
   return(
@@ -23,7 +22,10 @@ export const Post = () => {
               <Image src={data.thumbnail} alt="test"/>
             </div>
           </section>
-          <Article className={styles.container_main_section} content="<h2>this is a title World</h2> <p> oi <b>mundo</b></p>"/>
+          <article 
+            className={styles.container_main_section} 
+            dangerouslySetInnerHTML={{"__html": "<h1>this is a title World</h1> <h2>this is a title World</h2> <h3>this is a title World</h3> <p> oi </p> <b>mundo</b>"}}
+          />
         </main>
       </div>
     </>
