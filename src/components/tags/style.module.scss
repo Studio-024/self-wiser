@@ -30,7 +30,7 @@
 @media screen and (max-width: 50rem) {
 	.tag {
 		margin-right: .75rem;
-		padding-inline: .75rem;
+		// padding-inline: 1rem;
 
 		font-size: $text-2xs;
 	}
@@ -39,10 +39,12 @@
 @media screen and (max-width: 35rem) {
 	.tag {
 		height: 1.5rem;
-		margin-right: .75rem;
-		padding-inline: .5rem;
+		margin-right: .62rem;
+		// padding-inline: .5rem;
+
+		border: $border-sm $color-focus-primary;
 
 		font-family: 'Noto-sans semiBold';
-		font-size: $text-3xs;
+		font-size: $mob-text-xs;
 	}
 }
