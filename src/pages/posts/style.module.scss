@@ -1,5 +1,4 @@
 @import '../../styles/vars.scss';
-@import '../../styles/fonts.scss';
 
 .container {
   display: grid;
@@ -81,7 +80,7 @@
     &_main {
       margin-top: 2rem;
   
-      &_section &_article {
+      &_section, &_article {
         width: 32rem;
   
         & > h1 {
@@ -118,7 +117,7 @@
     &_main {
       margin-top: 1rem;
 
-      &_section &_article {
+      &_section, &_article {
         max-width: 85%;
         width: 85%;
         

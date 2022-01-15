@@ -10,6 +10,7 @@ export const Post = () => {
     <>
       <Head>
         <title>{data.title}</title>
+        <meta name="description" content={data.resume}/>
       </Head>
 
       <div className={styles.container}>
