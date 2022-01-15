@@ -8,7 +8,7 @@ export const Tags = ({ children }: IProps) => {
   	const tags = children.map((data) => {
     return (
     	<div key={data} className={`${styles.tag}`}>
-        {data}
+        <span className={styles.tag__name}>{data}</span>
       </div>
     )
   })
