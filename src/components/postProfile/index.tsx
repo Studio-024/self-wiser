@@ -2,23 +2,33 @@ import Image from "next/image"
 import styles from "./style.module.scss"
 
 interface IProps { 
-  author: {
+  data: {
     name: string,
     photo: StaticImageData,
-  }
-  post_created: string
+    post_created: string
+  },
+  className?: string
 }
 
 
-export const PostProfile = ( { author, post_created }:IProps ) => {
+export const PostProfile = ( { data, className = '' }: IProps ) => {
   return (
-    <div className={styles.profile}>
+    <div className={`${styles.profile} ${className}`}>
       <div className={styles.profile__photoContainer}>
-        <Image className={styles.profile__photo} src={author.photo} width="100" height="100" objectFit="cover" quality={90} />
+        <Image 
+          className={styles.profile__photo} 
+          src={data.photo} 
+          width="100" 
+          height="100" 
+          objectFit="cover" 
+          placeholder="blur" 
+          quality={90}
+          alt={`foto de perfil do ${data.name}`}
+        />
       </div>
       <div className={styles.profile__dataContainer}>
-        <span className={styles.profile__name}> {author.name} </span>
-        <span className={styles.profile__post_created}> {post_created} </span>
+        <span className={styles.profile__name}> {data.name} </span>
+        <span className={styles.profile__post_created}> {data.post_created} </span>
       </div>
     </div>
   )
