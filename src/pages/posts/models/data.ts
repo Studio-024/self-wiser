@@ -1,10 +1,12 @@
 import thumb from './React-logo.png'
+import photo from './Alexandreicon.jpg'
 
 interface data {
   title: string,
   resume: string,
   author: string,
   date: string,
+  photo: StaticImageData,
   Tags: Array<string>,
   thumbnail: StaticImageData,
   content: {
@@ -28,6 +30,7 @@ export const data: data = {
   resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae.",
   author: "Alexandre XYZ",
   date: '22 dezembro de 2020',
+  photo: photo,
   Tags: [
     'Faucinus',
     'Mauris',
