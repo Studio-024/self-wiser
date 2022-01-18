@@ -1,11 +1,10 @@
 import type { NextPage } from 'next'
-import { Post } from './posts'
-import '../service/initFirebase'
+// import '../service/initFirebase'
 
 const Home: NextPage = () => {
   return (
     <>
-      <Post/>
+      {/* <Post/> */}
     </>
   )
 }

@@ -2,10 +2,10 @@ import Head from "next/head"
 import Image from "next/image"
 import styles from './style.module.scss'
 import { Header } from "../../components/header"
-import { Tags } from "../../components/tags"
+// import { Tags } from "../../components/tags"
 import { data } from "./models/data"
 
-export const Post = () => {
+const Post = () => {
   return(
     <>
       <Head>
@@ -33,3 +33,4 @@ export const Post = () => {
     </>
   )
 } 
+export default Post
