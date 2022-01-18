@@ -1,5 +1,4 @@
 @import '../../styles/vars.scss';
-@import '../../styles/fonts.scss';
 
 .container {
   display: grid;
@@ -18,13 +17,15 @@
     grid-area: main;
     
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    
+    align-items: center;
+
     width: 100%;
     height: 100%;
     margin-top: 4rem;
     
-    &_article {
+    &_section, &.article {
       width: 47rem;
       max-width: 80%;
       
@@ -79,7 +80,7 @@
     &_main {
       margin-top: 2rem;
   
-      &_article {
+      &_section, &_article {
         width: 32rem;
   
         & > h1 {
@@ -116,7 +117,7 @@
     &_main {
       margin-top: 1rem;
 
-      &_article {
+      &_section, &_article {
         max-width: 85%;
         width: 85%;
         
