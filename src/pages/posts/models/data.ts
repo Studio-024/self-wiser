@@ -5,7 +5,7 @@ interface data {
   resume: string,
   author: string,
   date: string,
-  Tags: Array<string>,
+  Tags: string[],
   thumbnail: StaticImageData,
 }
 

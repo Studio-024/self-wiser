@@ -2,6 +2,7 @@ import Head from "next/head"
 import Image from "next/image"
 import styles from './style.module.scss'
 import { Header } from "../../components/header"
+import { Tags } from "../../components/tags"
 import { data } from "./models/data"
 
 export const Post = () => {
@@ -15,6 +16,7 @@ export const Post = () => {
       <div className={styles.container}>
         <Header className={styles.container_header}/>
         <main className={styles.container_main}>
+
           <section className={styles.container_main_section}>
             <h1 className={styles.container_main_section_title}>{data.title}</h1>
             <p className={styles.container_main_section_resume}>{data.resume}</p>
