@@ -11,6 +11,9 @@
     "pre-commit": "yarn lint --fix"
   },
   "dependencies": {
+    "dotenv": "^11.0.0",
+    "firebase": "^9.6.1",
+    "firebase-tools": "^10.0.1",
     "lint-staged": ">=10",
     "mrm": "2",
     "next": "12.0.7",

@@ -9,7 +9,7 @@ $color-focus-secundary: #F8C304;
 
 $anchor-color: #04558A;
 
-// Fonts
+// Fonts Desktop
 $text-3xs: .56rem;
 $text-2xs: .75rem;
 $text-xs: 1rem;
@@ -18,6 +18,17 @@ $text-base: 1.25rem;
 $text-lg: 2rem;
 $text-xlg: 2.25rem;
 $text-2xlg: 3rem;
+
+// Fonts Mobile
+$mob-text-xs: .62rem;
+$mob-text-sm: .75rem;
+$mob-text-base: .875rem;
+$mob-text-lg: 1rem;
+$mob-text-xlg: 1.12rem;
+$mob-text-2xlg: 1.25rem;
+$mob-text-3xlg: 1.5rem;
+$mob-text-4xlg: 1.75rem;
+
 
 // Outhers
 $border-sm: 1.5px solid;
