@@ -34,7 +34,8 @@
     "typescript": "4.5.4"
   },
   "resolutions": {
-    "ansi-regex": "5.0.1"
+    "ansi-regex": "5.0.1",
+    "firebase-tools/marked": "4.0.10"                                      
   },
   "config": {
     "commitizen": {
