@@ -7,8 +7,8 @@ interface props {
 }
 
 export const Header = ({ className = '', fixed }: props) => {
-  const isFixed = fixed ? styleUtils : '';
-
+  const isFixed = fixed ? styleUtils.fixed : '';
+  console.log(isFixed)
   return (
     <header className={`${styles.container} ${isFixed} ${className}`}>
       <div className={styles.container_logoContainer}>
