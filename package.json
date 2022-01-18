@@ -33,6 +33,9 @@
     "husky": "^7.0.4",
     "typescript": "4.5.4"
   },
+  "resolutions": {
+    "ansi-regex": "5.0.1"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
