@@ -16,7 +16,6 @@ const Post = () => {
       <div className={styles.container}>
         <Header className={styles.container_header}/>
         <main className={styles.container_main}>
-
           <section className={styles.container_main_section}>
             <h1 className={styles.container_main_section_title}>{data.title}</h1>
             <p className={styles.container_main_section_resume}>{data.resume}</p>
