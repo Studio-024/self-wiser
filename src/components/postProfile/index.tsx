@@ -5,7 +5,7 @@ interface IProps {
   data: {
     name: string,
     photo: StaticImageData,
-    post_created: string
+    created_at: string
   },
   className?: string
 }
@@ -28,7 +28,7 @@ export const PostProfile = ( { data, className = '' }: IProps ) => {
       </div>
       <div className={styles.profile__dataContainer}>
         <span className={styles.profile__name}> {data.name} </span>
-        <span className={styles.profile__post_created}> {data.post_created} </span>
+        <span className={styles.profile__created_at}> {data.created_at} </span>
       </div>
     </div>
   )

@@ -29,7 +29,7 @@
     color: $color-focus-primary-dark;
     font-family: 'Noto-sans semiBold';
   }
-  &__post_created {
+  &__created_at {
     font-size: $text-xs;
     
     color: $color-focus-secundary;
@@ -54,7 +54,7 @@
       
       color: $color-focus-primary-dark;
     }
-    &__post_created {
+    &__created_at {
       font-size: $mob-text-sm;
     }
   }
@@ -78,7 +78,7 @@
       font-size: $mob-text-sm;
       line-height: .8rem;
     }
-    &__post_created {
+    &__created_at {
       font-size: $mob-text-xs;
     }
   }
