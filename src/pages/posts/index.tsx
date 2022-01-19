@@ -2,6 +2,7 @@ import Head from "next/head"
 import Image from "next/image"
 import styles from './style.module.scss'
 import { Header } from "../../components/header"
+import { Tags } from "../../components/tags"
 import { data } from "./models/data"
 
 export const Post = () => {
@@ -9,24 +10,23 @@ export const Post = () => {
     <>
       <Head>
         <title>{data.title}</title>
+        <meta name="description" content={data.resume}/>
       </Head>
 
       <div className={styles.container}>
         <Header className={styles.container_header}/>
         <main className={styles.container_main}>
-          <article className={styles.container_main_article}>
-            <h1>{data.title}</h1>
-            <p className={styles.container_main_article_resume} >{data.resume}</p>
-            <div className={styles.container_main_article_thumb}>
-              <Image src={data.thumbnail} quality={90} placeholder='blur'/>
+          <section className={styles.container_main_section}>
+            <h1 className={styles.container_main_section_title}>{data.title}</h1>
+            <p className={styles.container_main_section_resume}>{data.resume}</p>
+            <div className={styles.container_main_section_thumb}>
+              <Image src={data.thumbnail} alt="test"/>
             </div>
-            <h2>{data.content.paragraph_1.title}</h2>
-            {data.content.paragraph_1.text.map((element, i)=>{return (<p key={i}>{element}</p>)})}
-            <h2>{data.content.paragraph_2.title}</h2>
-            {data.content.paragraph_2.text.map((element, i)=>{return (<p key={i}>{element}</p>)})}
-            <h3>{data.content.paragraph_2.subtitle.title}</h3>
-            <p>{data.content.paragraph_2.subtitle.text}<b>it text bolder</b></p>
-          </article>
+          </section>
+          <article 
+            className={styles.container_main_section} 
+            dangerouslySetInnerHTML={{"__html": "<h1>this is a title World</h1> <h2>this is a title World</h2> <h3>this is a title World</h3> <p> oi </p> <b>mundo</b>"}}
+          />
         </main>
       </div>
     </>
