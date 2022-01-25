@@ -2,9 +2,10 @@ import styles from './style.module.scss'
 
 interface IProps {
 	children: string[],
+  className?: string
 }
 
-export const Tags = ({ children }: IProps) => {
+export const Tags = ({ children, className = '' }: IProps) => {
   	const tags = children.map((data) => {
     return (
     	<div key={data} className={`${styles.tag}`}>
@@ -14,7 +15,7 @@ export const Tags = ({ children }: IProps) => {
   })
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className}`}>
       {tags}
     </div>
   )
