@@ -3,24 +3,25 @@ import Image from "next/image"
 import styles from './style.module.scss'
 import { Header } from "../../components/header"
 // import { Tags } from "../../components/tags"
-import { data } from "./models/data"
+import { dataExemple } from "./models/data"
+
 
 const Post = () => {
   return(
     <>
       <Head>
-        <title>{data.title}</title>
-        <meta name="description" content={data.resume}/>
+        <title>{dataExemple.title}</title>
+        <meta name="description" content={dataExemple.resume}/>
       </Head>
 
       <div className={styles.container}>
         <Header className={styles.container_header}/>
         <main className={styles.container_main}>
           <section className={styles.container_main_section}>
-            <h1 className={styles.container_main_section_title}>{data.title}</h1>
-            <p className={styles.container_main_section_resume}>{data.resume}</p>
+            <h1 className={styles.container_main_section_title}>{dataExemple.title}</h1>
+            <p className={styles.container_main_section_resume}>{dataExemple.resume}</p>
             <div className={styles.container_main_section_thumb}>
-              <Image src={data.thumbnail} alt="test"/>
+              <Image src={dataExemple.thumbnail} alt="test"/>
             </div>
           </section>
           <article 
