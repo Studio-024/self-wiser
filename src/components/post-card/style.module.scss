@@ -1,0 +1,75 @@
+@import '../../styles/vars.scss';
+
+.postCard {
+  display: grid;
+  grid-template: 'metadata article';
+
+  width: 40rem;
+  min-height: 12.5rem;
+  padding: 1rem;
+  
+  background-color: #fff;
+  box-shadow: $box-shadow-blocks;
+
+  color: $color-base;
+
+  &__metadata {
+    grid-area: 'metadata';
+    
+    width: 13rem;
+    margin-right: 1rem;
+  }
+  &__article {
+    grid-area: 'article';
+    
+    display: flex;
+    flex-direction: column;
+    
+    height: 100%;
+    width: 24rem;
+  }
+  &__postProfile {
+    margin-top: 1rem;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
+
+  &__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    
+    width: 100%;
+    margin-block: .5rem;
+    
+    line-clamp: 2;
+    -webkit-line-clamp: 2;    
+    
+    font-family: "noto-sans bold";
+    font-size: $text-xs; 
+    
+    overflow: hidden;
+  }
+  &__resume {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    
+    height: 3rem;
+    line-height: 1rem;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    
+    font-family: "Roboto Italic";
+    font-size: $text-2xs;
+    color: $color-base-comment;    
+    
+    overflow: hidden;
+  }
+}
+.tags {
+  margin-top: .5rem;
+}
