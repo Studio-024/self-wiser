@@ -1,0 +1,39 @@
+@import '../../styles/vars.scss';
+@import '../../styles/fonts.scss';
+
+.container {
+	display: flex;
+	flex-wrap: wrap;	
+}
+
+.tag {
+	margin-right: 1rem;
+	margin-bottom: .5rem;
+
+	&__name {
+		display: table-cell;
+		vertical-align: middle;
+
+		width: fit-content;
+		height: 1.5rem;
+		padding-inline: .75rem;
+		
+		font-family: 'Noto-sans semiBold';
+		font-size: $text-2xs;
+		color: $color-focus-primary;
+		
+		border: $border-base $color-focus-primary;
+		border-radius: 4px;
+		
+		user-select: none;
+	}
+}
+
+@media screen and (max-width: 35rem) {
+	.tag {
+		&__name{
+			font-family: 'Noto-sans semiBold';
+			font-size: $mob-text-sm;
+		}
+	}
+}
