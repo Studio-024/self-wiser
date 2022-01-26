@@ -7,6 +7,7 @@ export type data = {
   author: string,
   created_at: string,
   photo: StaticImageData,
+  photoAlt?: string,
   Tags: Array<string>,
   thumbnail: StaticImageData,
 }
