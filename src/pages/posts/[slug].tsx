@@ -3,8 +3,8 @@ import Image from "next/image"
 import styles from './style.module.scss'
 import { Header } from "../../components/header"
 import { data } from "./models/data"
-import { GetStaticProps } from "next"
-import { getArticleById } from "../../service/initFirebase"
+import { GetStaticPaths, GetStaticProps } from "next"
+import { getDocsBySlugName } from "../../service/initFirebase"
 
 
 interface IArticle {
@@ -50,21 +50,28 @@ export default function Post({parseArticle}: IPostProps) {
   )
 } 
 
-export const getStaticProps: GetStaticProps = async(ctx) => {    
-  const fetchArticle: any = await getArticleById('LMC6GVQKVJkoLIlKHop7')
+export const getStaticPaths: GetStaticPaths  = async () => {
+  return {
+    paths: [], 
+    fallback: 'blocking'
+
+  }
+}
+
+export const getStaticProps: GetStaticProps = async( ctx: any ) => {  
+  const { slug } = ctx.params
+
+  const fetchArticle: any = await getDocsBySlugName(slug) 
 
   const parseArticle = {
     ...fetchArticle,
     created_at: 'string',
     author: 'hard coded author',
   }
-  console.log("article parsed: ", parseArticle);
-  
 
   return {
     props: {
       parseArticle,
-      
     }  
   }
 }  
