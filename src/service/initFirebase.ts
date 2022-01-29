@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { collection, doc, getDoc, getDocs, getFirestore } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 import 'firebase/firestore'
 
@@ -39,4 +39,20 @@ export const getArticleById = async (id: string) => {
     // doc.data() will be undefined in this case
     console.log('ocorreu um erro')
   }
+}
+
+export const getDocsBySlugName = async (slug: string) => {
+  const q = query(collection(db, "article"), where("slug", "==", slug));
+
+  const querySnapshot = await getDocs(q);
+
+  let response = {}
+
+  querySnapshot.forEach((doc) => {
+  // doc.data() is never undefined for query doc snapshots
+    console.log("adf: ",doc.data())
+    response = doc.data()
+  });
+
+  return response
 }
