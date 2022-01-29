@@ -1,3 +1,5 @@
+import {remark} from 'remark'
+import html from 'remark-html'
 import Head from "next/head"
 import Image from "next/image"
 import styles from './style.module.scss'
@@ -50,6 +52,12 @@ export default function Post({parseArticle}: IPostProps) {
   )
 } 
 
+
+export  async function markdownToHtml(markdown: string) {
+  const result = await remark().use(html).process(markdown)
+  return result.toString()
+}
+
 export const getStaticPaths: GetStaticPaths  = async () => {
   return {
     paths: [], 
@@ -62,9 +70,11 @@ export const getStaticProps: GetStaticProps = async( ctx: any ) => {
   const { slug } = ctx.params
 
   const fetchArticle: any = await getDocsBySlugName(slug) 
+  const content = await markdownToHtml(fetchArticle.content)
 
   const parseArticle = {
     ...fetchArticle,
+    content,
     created_at: 'string',
     author: 'hard coded author',
   }
