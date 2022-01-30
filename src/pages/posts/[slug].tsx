@@ -6,17 +6,24 @@ import styles from './style.module.scss'
 import { Header } from "../../components/header"
 import { data } from "./models/data"
 import { GetStaticPaths, GetStaticProps } from "next"
-import { getDocsBySlugName } from "../../service/initFirebase"
+import { getDocsBySlugName, getWritterById } from "../../service/initFirebase"
 
 
-interface IArticle {
+export interface IArticle {
   title: string,
   description: string,
   content: string,
-  author: string,
+  author: any,
   date: string,
   Tags: string[],
   thumbnail: StaticImageData,
+  created_at: string | any
+}
+
+export interface IWritter {
+  name: string,
+  profile_picture: string,
+  article_list: string[]
 }
 
 interface IPostProps {
@@ -58,25 +65,32 @@ export  async function markdownToHtml(markdown: string) {
   return result.toString()
 }
 
+function timeStampToDate(seconds: number) {
+  const result = new Date(seconds*1000).toLocaleDateString()
+  return result
+}
+
 export const getStaticPaths: GetStaticPaths  = async () => {
   return {
     paths: [], 
     fallback: 'blocking'
-
   }
 }
 
 export const getStaticProps: GetStaticProps = async( ctx: any ) => {  
   const { slug } = ctx.params
 
-  const fetchArticle: any = await getDocsBySlugName(slug) 
+  const fetchArticle: IArticle  = await getDocsBySlugName(slug) 
   const content = await markdownToHtml(fetchArticle.content)
+  const created_at = timeStampToDate(fetchArticle.created_at.seconds)
+  
+  const fetchWritter: IWritter = await getWritterById(fetchArticle.author.id) 
 
-  const parseArticle = {
+  const parseArticle: IArticle = {
     ...fetchArticle,
     content,
-    created_at: 'string',
-    author: 'hard coded author',
+    created_at,
+    author: fetchWritter.name,
   }
 
   return {
