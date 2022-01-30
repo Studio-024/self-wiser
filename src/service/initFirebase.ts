@@ -33,7 +33,18 @@ export const getArticleById = async (id: string) => {
   const docSnap = await getDoc(docRef);
   
   if (docSnap.exists()) {
-    console.log("Document data:", docSnap.data())
+    return docSnap.data()
+  } else {
+    // doc.data() will be undefined in this case
+    console.log('ocorreu um erro')
+  }
+}
+
+export const getWritterById = async (id: string) => {
+  const docRef = doc(db, "writter", id);
+  const docSnap: any = await getDoc(docRef);
+  
+  if (docSnap.exists()) {
     return docSnap.data()
   } else {
     // doc.data() will be undefined in this case
@@ -46,11 +57,10 @@ export const getDocsBySlugName = async (slug: string) => {
 
   const querySnapshot = await getDocs(q);
 
-  let response = {}
+  let response : any //Depois a gente vê isso
 
   querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
-    console.log("adf: ",doc.data())
     response = doc.data()
   });
 
