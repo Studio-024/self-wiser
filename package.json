@@ -8,7 +8,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "commit": "git-cz",
-    "pre-commit": "yarn lint --fix"
+    "pre-commit": "yarn -v"
   },
   "dependencies": {
     "dotenv": "^11.0.0",
@@ -19,6 +19,8 @@
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
     "sass": "^1.45.1"
   },
   "devDependencies": {
@@ -35,7 +37,7 @@
   },
   "resolutions": {
     "ansi-regex": "5.0.1",
-    "firebase-tools/marked": "4.0.10"                                      
+    "firebase-tools/marked": "4.0.10"
   },
   "config": {
     "commitizen": {
