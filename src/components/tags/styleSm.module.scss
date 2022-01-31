@@ -31,6 +31,8 @@
 
 @media screen and (max-width: 35rem) {
 	.tag {
+		margin-right: .75rem;
+
 		&__name{
 			font-family: 'Noto-sans semiBold';
 			font-size: $mob-text-sm;

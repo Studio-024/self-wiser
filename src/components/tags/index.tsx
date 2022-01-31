@@ -1,4 +1,4 @@
-import stylesDf from './style.module.scss'
+import styleDf from './style.module.scss'
 import styleSm from './styleSm.module.scss'
 
 interface IProps {
@@ -8,7 +8,8 @@ interface IProps {
 }
 
 export const Tags = ({ children, className = '', type = 'Normal' }: IProps) => {
-  const styles = type === 'Small' ? styleSm : stylesDf 
+  const styles = type === 'Small' ? styleSm : styleDf;
+  
   const tags = children.map((data) => {
     return (
     	<div key={data} className={`${styles.tag}`}>
