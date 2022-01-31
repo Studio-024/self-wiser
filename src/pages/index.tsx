@@ -1,12 +1,16 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Header } from '../components/header'
-import PostCard from '../components/post-card'
-import { dataExemple } from './posts/models/data'
+import PostCardLine from '../components/postCardLine'
+import PostCardBlock from '../components/postCardBlock'
+import { dataExample } from './posts/models/data'
 import styles from './style.module.scss'
+import { useSizes } from '../hooks/useSizes'
 // import '../service/initFirebase'
 
 const Home: NextPage = () => {
+  const { width } = useSizes()
+  
   return (
     <>
       <Head>
@@ -15,7 +19,17 @@ const Home: NextPage = () => {
       </Head>
       <Header sticky/>
       <main>
-        <PostCard className={styles.postCard} data={dataExemple}/>
+        { width/16 < 30 ?
+          <>
+            <PostCardBlock className={styles.postCard} data={dataExample}/>
+            <PostCardBlock className={styles.postCard} data={dataExample}/>
+          </>
+          :
+          <>
+            <PostCardLine className={styles.postCard} data={dataExample}/>
+            <PostCardLine className={styles.postCard} data={dataExample}/>
+          </>
+        }
       </main>
     </>
   )
