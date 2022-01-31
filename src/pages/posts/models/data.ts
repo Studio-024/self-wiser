@@ -12,7 +12,7 @@ export type data = {
   thumbnail: StaticImageData,
 }
 
-export const dataExemple: data = {
+export const dataExample: data = {
   title: "Gravida neque convallis a cras semper auctor",
   resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae.",
   author: "Alexandre XYZ",
