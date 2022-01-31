@@ -1,14 +1,18 @@
 import Image from "next/image"
-import styles from "./style.module.scss"
+import styleDf from "./style.module.scss"
+import styleSm from "./styleSm.module.scss"
 import { data } from '../../pages/posts/models/data'
 
 interface IProps { 
   data: data,
-  className?: string
+  className?: string,
+  type?: 'Normal' | 'Small'
 }
 
 
-export const PostProfile = ( { data, className = '' }: IProps ) => {
+export const PostProfile = ( { data, className = '', type = 'Normal' }: IProps ) => {
+  const styles = type === 'Small' ? styleSm : styleDf;
+  
   return (
     <div className={`${styles.profile} ${className}`}>
       <div className={styles.profile__photoContainer}>
