@@ -27,10 +27,10 @@ export interface IWritter {
 }
 
 interface IPostProps {
-  parseArticle: IArticle
+  parseArticle?: IArticle
 }
 
-export default function Post({parseArticle}: IPostProps) {
+export default function Post({ parseArticle }: IPostProps) {
   return(
     <>
       <Head>
@@ -39,18 +39,17 @@ export default function Post({parseArticle}: IPostProps) {
       </Head>
 
       <div className={styles.container}>
-        <Header className={styles.container_header}/>
-        <main className={styles.container_main}>
-
-          <section className={styles.container_main_section}>
-            <h1 className={styles.container_main_section_title}>{parseArticle.title}</h1>
-            <p className={styles.container_main_section_resume}>{parseArticle.description}</p>
-            <div className={styles.container_main_section_thumb}>
-              <Image src={data.thumbnail} alt="test"/>
+        <Header className={styles.header}/>
+        <main className={styles.post}>
+          <section className={styles.post__metadata}>
+            <h1>{parseArticle.title}</h1>
+            <p className={styles.post__resume}>{parseArticle.description}</p>
+            <div className={styles.post__thumbnail}>
+              <Image src={data.thumbnail}/>
             </div>
           </section>
           <article 
-            className={styles.container_main_section} 
+            className={styles.post__content} 
             dangerouslySetInnerHTML={{"__html": parseArticle.content}}
           />
         </main>
