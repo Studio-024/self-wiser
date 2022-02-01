@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { collection, doc, setDoc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 import 'firebase/firestore'
 
@@ -18,6 +18,10 @@ const app = initializeApp(firebaseConfig)
 
 // for testing
 const db = getFirestore(app);
+
+export const insertArticle = async(article: any) => {
+  await setDoc(doc(db, "article", "artigotest"), article);
+}
 
 export const getArticles = async () => {
   const articleCollection = collection(db, 'article')

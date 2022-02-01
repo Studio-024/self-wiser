@@ -1,11 +1,12 @@
 import Head from "next/head";
 import { FormEvent, useState } from "react";
+import { insertArticle } from "../../service/initFirebase";
 import styles from './style.module.scss'
 
 const Insert = () => {
   const [login, setLogin] = useState(false)
   const [passwordUser, setPassword] = useState('')
-  // const [content, setContent] = useState('')
+  const [content, setContent] = useState('')
   const password = 'Boita'
   
   const handleSubmit = () => passwordUser === password && setLogin(true) 
@@ -23,6 +24,11 @@ const Insert = () => {
   }
   else {
 
+    const handleClick = (event: FormEvent) => {
+      event.preventDefault();
+      insertArticle({content})
+      console.log(content)
+    }
     return (
       <>
       <Head>
@@ -38,8 +44,8 @@ const Insert = () => {
         <label>thumbnail</label>
         <input type="file" />
         <label>content</label>
-        <textarea />
-        <button>Click</button>
+        <textarea onChange={(event: FormEvent<HTMLTextAreaElement>) => setContent(event.currentTarget.value)}/>
+        <button onClick={handleClick}>Click</button>
       </form>
     </>
     )
