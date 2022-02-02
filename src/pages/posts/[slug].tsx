@@ -27,7 +27,7 @@ export interface IWritter {
 }
 
 interface IPostProps {
-  parseArticle?: IArticle
+  parseArticle: IArticle
 }
 
 export default function Post({ parseArticle }: IPostProps) {
