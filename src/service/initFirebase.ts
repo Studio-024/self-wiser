@@ -12,6 +12,8 @@ const firebaseConfig = {
   appId: process.env.FIREBASE_APP_ID,
   measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
+console.log(firebaseConfig.apiKey)
+console.log(process.env.FIREBASE_API_KEY)
 console.log('firebase running');
 
 export const app = initializeApp(firebaseConfig)

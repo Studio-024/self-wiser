@@ -5,7 +5,7 @@ import { signUp } from '../../service/authentication'
 export default function SignUp() {
 	const credentials = {
 		email: 'foo@gmail.com',
-		password: 'bar'
+		password: 'barbar'
 	}
 
 	const login = async (): Promise<void> => {
@@ -20,7 +20,7 @@ export default function SignUp() {
 			<main className={styles.container_main}>
 
 				<section className={styles.container_main_section}>
-					<button onClick={login} />
+					<button onClick={login}>cLIcA</button>
 				</section>
 			</main>
 		</div>
