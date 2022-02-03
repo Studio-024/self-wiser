@@ -14,7 +14,7 @@ const firebaseConfig = {
 };
 console.log('firebase running');
 
-const app = initializeApp(firebaseConfig)
+export const app = initializeApp(firebaseConfig)
 
 // for testing
 const db = getFirestore(app);
