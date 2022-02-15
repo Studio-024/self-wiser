@@ -1,35 +1,55 @@
+import { FormEvent, useState } from 'react'
+
 import styles from './style.module.scss'
 import { Header } from '../../../components/header'
 import { signUp } from '../../../service/authentication'
-import { FormEvent, useState } from 'react'
+import { ICredentials } from '../../../interfaces/Credentials'
 
-interface ICredentials {
-	email: string,
-	password: string
-}
 
 export default function SignUp() {
-	const [credentials, setCredentials] = useState<ICredentials>({email: "bar@gmail.com", password: "123456"})
+  const [credentials, setCredentials] = useState<ICredentials>({email: '', password: ''})
 
-	const login = async (event: FormEvent): Promise<void> => {
-		event.preventDefault()
-		const foo = await signUp(credentials)
-		console.log(foo)
-	}
+  const login = async (event: FormEvent): Promise<void> => {
+    event.preventDefault()
 
-	return (
-		<>
-		<div className={styles.container}>
-			<Header className={styles.container_header}/>
-			<main className={styles.container_main}>
+    const foo = await signUp(credentials)
+		
+    console.log(foo)
+  }
 
-				<form className={styles.container_main_section}>
-					<input type="email" />
-					<input type="password" />
-					<button onClick={login}>cLIcA</button>
-				</form>
-			</main>
-		</div>
-		</>
-	)
+  return (
+    <div>
+      <Header/>
+      <main>
+
+        <form className={styles.signup}>
+          <fieldset>
+            <label htmlFor="name">nome de usuário: </label>
+            <input type="text" id="name" onChange={(e: any)=> {setCredentials(credentials => ({
+              ...credentials,
+              email: e.target.value
+            }))}} />
+
+            <label htmlFor="picture">foto de perfil: </label>
+            <input type="file" id="picture" accept="image/png, image/jpeg"/>
+          </fieldset>
+
+          <fieldset>
+            <label htmlFor="email">Email: </label>
+            <input type="email" id="email" onChange={(e: any)=> {setCredentials(credentials => ({
+              ...credentials,
+              email: e.target.value
+            }))}} />
+
+            <label htmlFor="password">Senha: </label>
+            <input type="password" id="password" onChange={(e: any)=> {setCredentials(credentials => ({
+              ...credentials,
+              password: e.target.value
+            }))}}/>
+          </fieldset>
+          <button onClick={login}>registrar</button>
+        </form>
+      </main>
+    </div>
+  )
 }
