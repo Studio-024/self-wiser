@@ -1,12 +1,12 @@
 import styles from './style.module.scss'
 import styleUtils from '../../styles/utils.module.scss'
 
-interface props {
+interface IProps {
   className?: string,
   fixed?: boolean
 }
 
-export const Header = ({ className = '', fixed }: props) => {
+export const Header = ({ className = '', fixed }: IProps) => {
   const isFixed = fixed ? styleUtils : '';
 
   return (
