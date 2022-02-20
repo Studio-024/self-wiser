@@ -6,7 +6,8 @@ import PostCardBlock from '../components/postCardBlock'
 import { dataExample } from './posts/models/data'
 import styles from './style.module.scss'
 import { useSizes } from '../hooks/useSizes'
-// import '../service/initFirebase'
+import '../service/initFirebase'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   const { width } = useSizes()
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
           </>
         }
       </main>
+      <h1>clique <Link href={'/posts/carlos-first-article'}>Nesse</Link> link</h1>
     </>
   )
 }
