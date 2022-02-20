@@ -1,0 +1,47 @@
+@import '../../styles/vars.scss';
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem;
+  width: 95%;
+  padding: 1rem;
+
+  background-color: #fff;
+  box-shadow: $box-shadow-blocks;
+
+  color: $color-base;
+  &__thumb {
+    border: $border-base #340763 !important;
+  }
+  &__tags {
+    margin-top: 1rem;
+  }
+  &__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    
+    width: 100%;
+    margin-bottom: .5rem;
+    
+    font-family: "noto-sans bold";
+    font-size: $text-sm;
+    
+    overflow: hidden;
+  }
+  &__author {
+    font-size: $text-2xs;
+    line-height: 1.2rem;
+    color: #340763;
+    font-family: "Noto-sans Bold";
+  }
+  &__createdAt {
+    font-size: $text-2xs;
+    color: #dbac02;
+    font-family: "Noto-sans semibold";
+  }
+
+}
