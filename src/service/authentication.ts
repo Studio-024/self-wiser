@@ -9,11 +9,13 @@ const auth = getAuth(app);
 export const signUp = async ({ email, password, name }: ICredentials) => {
 	try {
 		const { user } = await createUserWithEmailAndPassword(auth, email, password)
-
+		
 		await setDoc(doc(db, "writter", user.uid), {
-		name: name,
-		email: user.email
-	});
+			name: name,
+			email: user.email
+			
+			
+		});
 		return user
 	}
 	catch(error: any)  {
