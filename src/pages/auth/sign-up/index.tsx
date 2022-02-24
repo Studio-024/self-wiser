@@ -3,7 +3,7 @@ import { FormEvent, useState } from 'react'
 import styles from './style.module.scss'
 import { Header } from '../../../components/header'
 import { signUp } from '../../../service/authentication'
-import { ICredentials } from '../../../interfaces/Credentials'
+import { ICredentials } from '../../../interfaces/ICredentials'
 
 
 export default function SignUp() {

@@ -2,7 +2,9 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 import { doc, setDoc } from 'firebase/firestore';
 import { app, db } from './initFirebase'
 
-import { ICredentials } from '../interfaces/Credentials';
+import { ICredentials } from '../interfaces/ICredentials';
+import { IFirebaseError } from '../interfaces/IFirebaseError';
+import { errorHandler } from '../helper/auth';
 
 const auth = getAuth(app);
 
@@ -19,9 +21,9 @@ export const signUp = async ({ email, password, name }: ICredentials) => {
 		return user
 	}
 	catch(error: any)  {
-			const errorMessage = error.message;
+		const errorObj: IFirebaseError = error
 
-			throw new Error(errorMessage)
+		return errorHandler(errorObj)
 	}
 }
 
@@ -31,8 +33,8 @@ export const signIn = async ({ email, password }: ICredentials) => {
 		return user
 	}
 	catch(error: any)  {
-			const errorMessage = error.message;
-
-			throw new Error(errorMessage)
+		const errorObj: IFirebaseError = error
+		
+		return errorHandler(errorObj)
 	}
 }
