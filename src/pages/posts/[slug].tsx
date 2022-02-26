@@ -4,7 +4,7 @@ import Head from "next/head"
 import Image from "next/image"
 import styles from './style.module.scss'
 import { Header } from "../../components/header"
-import { data } from "./models/data"
+import { data, dataExample } from "./models/data"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { getDocsBySlugName, getWritterById } from "../../service/initFirebase"
 
@@ -45,7 +45,7 @@ export default function Post({ parseArticle }: IPostProps) {
             <h1>{parseArticle.title}</h1>
             <p className={styles.post__resume}>{parseArticle.description}</p>
             <div className={styles.post__thumbnail}>
-              <Image src={data.thumbnail}/>
+              <Image src={dataExample.thumbnail}/>
             </div>
           </section>
           <article 

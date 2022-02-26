@@ -1,13 +1,15 @@
 import styles from './style.module.scss'
 import styleUtils from '../../styles/utils.module.scss'
+import Link from 'next/link';
 
 interface IProps {
   className?: string,
-  fixed?: boolean
+  sticky?: boolean
 }
 
-export const Header = ({ className = '', fixed }: IProps) => {
-  const isFixed = fixed ? styleUtils : '';
+
+export const Header = ({ className = '', sticky }: props) => {
+  const isFixed = sticky ? styleUtils.sticky : '';
 
   return (
     <header className={`${styles.header} ${isFixed} ${className}`}>
