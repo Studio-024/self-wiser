@@ -12,6 +12,8 @@
   box-shadow: $box-shadow-blocks;
   
   background-color: #fff;
+
+  z-index: 999;
   
   &_logoContainer {
     text-align: center;
@@ -40,6 +42,7 @@
       padding-inline: 1rem;
 
       font-size: $text-base;
+      text-decoration: none;
 
       color: $color-base-disable;
 
