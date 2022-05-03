@@ -5,15 +5,15 @@ import { Header } from '../../../components/header'
 import { signIn } from '../../../service/authentication'
 import { ICredentials } from '../../../interfaces/ICredentials'
 
-export default function SignUp() {
+export default function SignIn() {
 	const [credentials, setCredentials] = useState<ICredentials>({email: '', password: ''})
 	
 	const login = async (event: FormEvent): Promise<void> => {
 		event.preventDefault()
 		
-		const foo = await signIn(credentials)
+		const signInCallback = await signIn(credentials)
 		
-		console.log(foo)
+		console.log(signInCallback)
 	}
 	
 	return (
