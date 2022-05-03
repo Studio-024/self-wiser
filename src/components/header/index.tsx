@@ -1,5 +1,5 @@
-import styles from './style.module.scss'
-import styleUtils from '../../styles/utils.module.scss'
+import styles from './style.module.scss';
+import styleUtils from '../../styles/utils.module.scss';
 import Link from 'next/link';
 
 interface IProps {
@@ -20,9 +20,8 @@ export const Header = ({ className = '', sticky }: props) => {
         <a className={styles.header__topic}>Artigos</a>
         <a className={styles.header__topic}>Sobre</a>
       </nav>
-      <div>
-        <input type="search" placeholder='Procurar' className={styles.header__search}/>
-      </div>
+      {/*<div>
+         <input type="search" placeholder='Procurar' className={styles.header__search}/> 
+      </div> */}
     </header>
   )
-} 
