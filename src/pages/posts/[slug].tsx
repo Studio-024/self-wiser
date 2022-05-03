@@ -46,7 +46,7 @@ export default function Post({parseArticle}: IPostProps) {
             <h1 className={styles.container_main_section_title}>{parseArticle.title}</h1>
             <p className={styles.container_main_section_resume}>{parseArticle.description}</p>
             <div className={styles.container_main_section_thumb}>
-              <Image src={dataExample.thumbnail} alt="test"/>
+              <Image src={dataExample.thumbnail}/>
             </div>
           </section>
           <article 
