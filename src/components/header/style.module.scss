@@ -1,6 +1,6 @@
 @import '../../styles/vars.scss';
 
-.container {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,6 +8,7 @@
   width: 100%;
   height: 5rem;
   padding-inline: 1rem;
+
   font-family: 'Noto-sans';
   box-shadow: $box-shadow-blocks;
   
@@ -15,15 +16,16 @@
 
   z-index: 999;
   
-  &_logoContainer {
+  &__logo {
     text-align: center;
+
     min-width: 10rem;
 
     font-size: $text-base;
     color: $color-focus-primary;    
   }
 
-  &_nav {
+  &__nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -31,28 +33,27 @@
     width: 100%;
     height: 100%;
     margin-inline: 2rem;
+  }
+  &__topic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 100%;
+    height: 100%;
+    padding-inline: 1rem;
+
+    font-size: $text-base;
+    text-decoration: none;
+
+    color: $color-base-disable;
+
+    transition: .2s;
     
-    &_topic {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    cursor: pointer;
     
-      width: 100%;
-      height: 100%;
-      padding-inline: 1rem;
-
-      font-size: $text-base;
-      text-decoration: none;
-
-      color: $color-base-disable;
-
-      transition: .2s;
-      
-      cursor: pointer;
-      
-      &:hover {
-        color:$color-base;
-      }
+    &:hover {
+      color: $color-base;
     }
   }
   &__search {
@@ -79,31 +80,30 @@
 }
 @media screen and (max-width: 50rem) {
     
-  .container {
+  .header {
     height: 4rem;
     padding-inline: .25rem;
     
-    &_logoContainer {
+    &__logo {
       min-width: 6rem;
   
       font-size: $text-xs;
     }
+    &__nav {
+      margin-inline: 1rem;
+    }
+    &_topic {
+      padding-inline: 0.5rem;
+      
+      font-size: $text-xs;
 
-    &_nav {
+      color: $color-base;
 
-      &_topic {
-        padding-inline: 0.5rem;
-        
-        font-size: $text-xs;
+      &:active{
+        background-color: #fff;
+        filter: brightness(0.9);
 
-        color: $color-base;
-
-        &:active{
-          background-color: #fff;
-          filter: brightness(0.9);
-
-          transition: .1s;
-        }
+        transition: .1s;
       }
     }
     &__search {
