@@ -1,8 +1,8 @@
-import { initializeApp } from 'firebase/app';
-import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
-import { keys } from '../../.env'
-
 import 'firebase/firestore'
+import { initializeApp } from 'firebase/app';
+import { collection, doc, setDoc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
+
+import { keys } from '../../.env'
 
 const firebaseConfig = {
   apiKey: keys.FIREBASE_API_KEY,
@@ -19,6 +19,10 @@ export const app = initializeApp(firebaseConfig)
 // for testing
 export const db = getFirestore(app);
 
+export const insertArticle = async(article: any) => {
+  await setDoc(doc(db, "article", "artigotest"), article);
+}
+
 export const getArticles = async () => {
   const articleCollection = collection(db, 'article')
   const articleSnapshot = await getDocs(articleCollection) 
@@ -26,7 +30,6 @@ export const getArticles = async () => {
 
   console.log(articleList)
 }
-
 
 export const getArticleById = async (id: string) => {
   const docRef = doc(db, "article", id);
