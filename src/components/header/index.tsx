@@ -25,3 +25,4 @@ export const Header = ({ className = '', sticky }: props) => {
       </div> */}
     </header>
   )
+}
