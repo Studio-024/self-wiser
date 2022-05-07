@@ -8,7 +8,7 @@ interface IProps {
 }
 
 
-export const Header = ({ className = '', sticky }: props) => {
+export const Header = ({ className = '', sticky }: IProps) => {
   const isFixed = sticky ? styleUtils.sticky : '';
 
   return (
