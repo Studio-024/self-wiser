@@ -1,0 +1,14 @@
+@import '../../styles/vars.scss';
+@import '../../styles/fonts.scss';
+
+.default fieldset {
+    border: 2px $color-focus-primary-dark solid !important;
+    
+}
+.default > div > label {
+    color: $color-focus-secundary !important;
+    font-family: 'Noto-sans';
+}
+.default svg {
+    color: $color-focus-primary !important;
+}

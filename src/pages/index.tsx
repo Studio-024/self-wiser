@@ -9,6 +9,8 @@ import { useSizes } from '../hooks/useSizes'
 import '../service/initFirebase'
 import Link from 'next/link'
 
+import { AutocompleteField } from '../components/autoComplete'
+
 const Home: NextPage = () => {
   const { width } = useSizes()
   
@@ -20,6 +22,9 @@ const Home: NextPage = () => {
       </Head>
       <Header sticky/>
       <main>
+        <form className={styles.filter}>
+          <AutocompleteField label='Tag' options={dataExample.Tags} size="small" className={styles.box} sx={{width: '9rem'}}/>
+        </form>
         { width/16 < 30 ?
           <>
             <PostCardBlock className={styles.postCard} data={dataExample}/>
