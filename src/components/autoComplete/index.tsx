@@ -7,7 +7,7 @@ export const AutocompleteField = (
     label,
     options, 
     size = 'medium', 
-    fullWidth = true, 
+    fullWidth = true,
     className = styles.default,
     sx = null,  
     renderInput, 
