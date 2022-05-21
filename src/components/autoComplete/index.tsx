@@ -15,7 +15,7 @@ export const AutocompleteField = (
   }: IProps) => {
   
   return (
-      <Autocomplete
+    <Autocomplete
       disablePortal={disablePortal}
       className={className}
       options={options}
@@ -23,6 +23,6 @@ export const AutocompleteField = (
       size={size}
       sx={sx}
       renderInput={renderInput ? renderInput : (params) => <TextField {...params} label={label} />}
-      />
+    />
   )
 }
