@@ -6,8 +6,9 @@ import PostCardBlock from '../components/postCardBlock'
 import { dataExample } from './posts/models/data'
 import styles from './style.module.scss'
 import { useSizes } from '../hooks/useSizes'
-import '../service/initFirebase'
+// import '../service/initFirebase'
 import Link from 'next/link'
+import { AutocompleteField } from '../components/autoComplete';
 
 const Home: NextPage = () => {
   const { width } = useSizes()
@@ -20,7 +21,10 @@ const Home: NextPage = () => {
       </Head>
       <Header sticky/>
       <main>
-        { width/16 < 30 ?
+        <form className={styles.filter}>
+          <AutocompleteField label='Tag' options={dataExample.Tags} size="small" className={styles.box} sx={{width: '9rem'}}/>
+        </form>
+        { width/16 < 40 ?
           <>
             <PostCardBlock className={styles.postCard} data={dataExample}/>
             <PostCardBlock className={styles.postCard} data={dataExample}/>

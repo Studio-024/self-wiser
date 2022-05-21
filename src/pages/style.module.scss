@@ -1,3 +1,29 @@
+@import '../styles/vars.scss';
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 40rem;
+  height: 8rem;
+  margin: 2rem auto 0 auto;
+  padding-block: 2rem;
+  
+  box-shadow: $box-shadow-blocks;
+}
+
 .postCard {
   margin: 3rem auto;
+}
+
+@media screen and (max-width: 50rem){
+  .filter {
+    width: 95%;
+    height: 8rem;
+    margin: 2rem auto 0 auto;
+    padding-block: 2rem;
+    
+    box-shadow: $box-shadow-blocks;
+  }  
 }
